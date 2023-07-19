@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Joke Website</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>My Joke Website</h1>
+<p>This is a website that generates random jokes.</p>
+<button id="revealJoke">Reveal New Joke</button>
+<div id="joke"></div>
+<div class="footer">
+  <a href="index.html">HOME</a>
+  <a href="about.html">ABOUT</a>
+<!--  https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single  -->
+<script>
+function revealJoke() {
+  const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,racist,sexist,explicit&type=single";
+  fetch(url)
+    .then(data => data.json())
+    .then(item => {
+      document.getElementById("joke").textContent = item.joke;
+    });
+}
+
+document.getElementById("revealJoke").addEventListener("click", revealJoke);
+</script>
+</body>
+</html>
