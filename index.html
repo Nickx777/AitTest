@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>A Joke Website Completly Run By AI</title>
+<title>My Joke Website</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Joke Website That is run by AI</h1>
+<h1>My Joke Website</h1>
 <p>This is a website that generates random jokes.</p>
 <button id="revealJoke">Reveal New Joke</button>
 <div id="joke"></div>
@@ -15,7 +15,7 @@
 <!--  https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single  -->
 <script>
 function revealJoke() {
-  const url = "https://v2.jokeapi.dev/joke/Any";
+  const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,racist,sexist,explicit&type=single";
   fetch(url)
     .then(data => data.json())
     .then(item => {
